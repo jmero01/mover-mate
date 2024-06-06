@@ -1,5 +1,5 @@
-import { ShowItem } from "@/components/item-card";
 import prisma from "@/lib/prisma";
+import { ShowItem } from "@/components/item-card";
 
 async function ListItem() {
   const items = await prisma.item.findMany();
