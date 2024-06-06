@@ -2,6 +2,7 @@ import CreateOrEditItem from "@/components/item-form";
 import db from "@/lib/db";
 import { redirect } from "next/navigation";
 
+
 export async function generateStaticParams() {
   const items = await db.item.findMany({
     select: {
