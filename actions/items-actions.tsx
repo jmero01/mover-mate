@@ -29,9 +29,9 @@ export async function createItem(formData: FormData) {
   redirect("/");
 }
 
+"use server";
 export async function removeItem(formData: FormData) {
   const itemId = formData.get("itemId")?.toString();
-  "use server";
   if (!itemId) {
     return;
   }
