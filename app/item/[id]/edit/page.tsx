@@ -1,10 +1,10 @@
 import CreateOrEditItem from "@/components/item-form";
-import db from "@/lib/db";
+import prisma from "@/lib/db";
 import { redirect } from "next/navigation";
 
 
 export async function generateStaticParams() {
-  const items = await db.item.findMany({
+  const items = await prisma.item.findMany({
     select: {
       id: true,
     },
@@ -19,7 +19,7 @@ export default async function EditPage({
     id: string;
   };
 }) {
-  const item = await db.item.findFirst({
+  const item = await prisma.item.findFirst({
     where: {
       id: parseInt(params.id),
     },
