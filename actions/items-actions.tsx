@@ -26,7 +26,7 @@ export async function createItem(formData: FormData) {
       hand: hand,
     },
   });
-  redirect("/");
+  redirect("/item-list");
 }
 
 export async function removeItem(formData: FormData) {
@@ -70,5 +70,5 @@ export async function editItem(formData: FormData) {
     },
   });
 
-  redirect("/");
+  redirect("/item-list");
 }
