@@ -4,7 +4,7 @@ import { Navbar } from "./navbar";
 
 const Header = () => {
   return (
-    <div className="grid grid-cols-3 justify-center items-center border-b-2 border-black dark:border-white">
+    <div className="grid grid-cols-3 justify-center items-center border-b-2 border-black dark:border-white mb-5">
       <div>
         <Logo />
       </div>

@@ -1,6 +1,6 @@
 "use server";
 
-import db from "@/lib/db";
+import prisma from "@/lib/db";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -16,7 +16,7 @@ export async function createItem(formData: FormData) {
     return;
   }
 
-  await db.item.create({
+  await prisma.item.create({
     data: {
       number: number,
       color: color,
@@ -35,7 +35,7 @@ export async function removeItem(formData: FormData) {
     return;
   }
 
-  await db.item.delete({
+  await prisma.item.delete({
     where: {
       id: parseInt(itemId),
     },
@@ -56,7 +56,7 @@ export async function editItem(formData: FormData) {
     return;
   }
 
-  await db.item.update({
+  await prisma.item.update({
     where: {
       id: parseInt(id),
     },
